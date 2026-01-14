@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator & Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Maze Generator & Solver</h1>
+
+    <div id="controls">
+        <div class="control-group">
+            <label for="gridSize">細度 (奇数)</label>
+            <input type="number" id="gridSize" value="51" min="11" max="101" step="2">
+        </div>
+
+        <div class="control-group">
+            <label for="branchRate">分岐 (少⇔多)</label>
+            <input type="range" id="branchRate" min="0" max="100" value="10">
+        </div>
+
+        <div class="control-group">
+            <div style="display: flex; gap: 10px;">
+                <button id="btnCreate">作成</button>
+                <button id="btnSolve" disabled>探索</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label for="speedRange">実行速度 (遅⇔速)</label>
+            <input type="range" id="speedRange" min="0" max="100" value="90">
+        </div>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="mazeCanvas" width="600" height="600"></canvas>
+    </div>
+
+    <div class="legend">
+        <span><div class="box visited"></div> 探索済</span>
+        <span><div class="box path"></div> 最短経路</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

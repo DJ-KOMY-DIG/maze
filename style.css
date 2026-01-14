@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 { margin-bottom: 10px; }
+
+#controls {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.control-group label {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    height: 40px;
+    margin-top: auto;
+}
+
+button:hover { background-color: #0056b3; }
+button:disabled { background-color: #ccc; cursor: not-allowed; }
+
+input[type="range"] { width: 150px; }
+
+/* 迷路のコンテナ */
+#canvas-container {
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: #000;
+}
+
+canvas {
+    display: block;
+}
+
+.legend {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 15px;
+}
+.legend span { display: flex; align-items: center; gap: 5px; }
+
+.box { width: 15px; height: 15px; border: 1px solid #999; }
+
+/* 凡例の色定義 */
+.box.aisle { background: #fff; }
+.box.wall { background: #000; }
+/* .box.visited { background: #ff0; } */
+.box.visited { background: #ff9100; }
+.box.path { background: #0f0; }
